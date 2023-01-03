@@ -21,7 +21,7 @@ async function request(url) {
     return data
   } catch (err) {
     cardsContainer.innerHTML = `
-  <div class="card__error"><div>Что-то пошло не так :(</div><div>Можете обратится к документации: <a href="https://github.com/Xoxyxy?tab=repositories" target="_blank">https://github.com/Xoxyxy?tab=repositories</a></div></div>
+  <div class="card__error"><div>Что-то пошло не так :(</div><div>Можете обратится к документации: <a href="https://github.com/Xoxyxy/Filmnerd" target="_blank">https://github.com/Xoxyxy/Filmnerd</a></div></div>
   `
     hideLoader()
     resultText.remove()
