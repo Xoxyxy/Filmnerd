@@ -1,6 +1,5 @@
 import '../css/normalize.css'
 import '../css/main.css'
-import '../index.html'
 
 import { initApp } from './modules/initApp'
 import { queryParam } from './modules/queryParam'
