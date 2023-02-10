@@ -1,9 +1,9 @@
 import { requestOfModal } from '../services/services'
-import { APIFilmInfoById, modal, body } from '../utils/variables'
+import { API, modal, body } from '../utils/variables'
 import { hideLoader, existenceCheck, getGenres, changeRatingAgeLimits, checkOfFilmLength } from '../utils/functions'
 
 async function openModal(id) {
-  await requestOfModal(APIFilmInfoById, id)
+  await requestOfModal(API.API_FilmInfoById, id)
     .then(film => {
       hideLoader()
       try {
@@ -57,7 +57,7 @@ modal.addEventListener('click', event => {
 })
 
 window.addEventListener('keydown', event => {
-  if (event.code == 'Escape' && modal.classList.contains('modal--active')) modalClose()
+  if (event.code === 'Escape' && modal.classList.contains('modal--active')) modalClose()
 })
 
 export { openModal }

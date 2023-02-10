@@ -4,9 +4,9 @@ import '../css/main.css'
 import { initApp } from './modules/initApp'
 import { queryParam } from './modules/queryParam'
 import { searchFilms } from './modules/search'
-import { APISearchFilms } from './utils/variables'
+import { API } from './utils/variables'
 
 document.addEventListener('DOMContentLoaded', () => {
   initApp(queryParam)
-  searchFilms(APISearchFilms)
+  searchFilms(API.API_SearchFilms)
 })

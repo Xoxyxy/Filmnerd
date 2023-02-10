@@ -1,9 +1,9 @@
 import { request } from '../services/services'
 import { queryParam } from '../modules/queryParam'
-import { APITopFilms, pagination } from '../utils/variables'
+import { API, pagination } from '../utils/variables'
 
 async function initApp(page = 1) {
-  const data = await request(APITopFilms + page)
+  const data = await request(API.API_TopFilms + page)
   const pages = data.pagesCount
 
   for (let i = pages; i >= 1; i--) {

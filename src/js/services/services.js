@@ -1,6 +1,6 @@
-import { render } from '../modules/render'
-import { showLoader, hideLoader } from '../utils/functions'
-import { cardsContainer, APIKey, resultText, pagination } from '../utils/variables'
+import {render} from '../modules/render'
+import {showLoader, hideLoader} from '../utils/functions'
+import {API, cardsContainer, resultText, pagination} from '../utils/variables'
 
 async function request(url) {
   try {
@@ -10,7 +10,7 @@ async function request(url) {
 
     const resp = await fetch(url, {
       headers: {
-        'X-API-KEY': APIKey,
+        'X-API-KEY': API.API_KEY,
         'Content-type': 'application/json'
       }
     })
@@ -25,7 +25,7 @@ async function request(url) {
   `
     hideLoader()
     resultText.remove()
-    throw console.error(err)
+    console.error(err)
   }
 }
 
@@ -33,7 +33,7 @@ async function requestOfModal(url, id) {
   showLoader()
   const resp = await fetch(url + id, {
     headers: {
-      'X-API-KEY': APIKey,
+      'X-API-KEY': API.API_KEY,
       'Content-type': 'application/json'
     }
   })
@@ -41,4 +41,4 @@ async function requestOfModal(url, id) {
   return await resp.json()
 }
 
-export { requestOfModal, request }
+export {requestOfModal, request}
